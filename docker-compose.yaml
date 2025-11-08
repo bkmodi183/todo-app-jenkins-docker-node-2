@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   web:
-    image: bkmodi183/todo-node-jenkins-test:latest
+    image: bkmodi183/todo-node-app-jenkins-test:latest
     container_name: todo-app
     ports:
       - "8000:8000"
