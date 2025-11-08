@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Use a modern Node LTS image
 FROM node:18-alpine
 
@@ -14,6 +15,13 @@ RUN npm install --production
 COPY . .
 
 # Expose the port your app uses
+=======
+FROM node:12.2.0-alpine
+WORKDIR node
+COPY . /node
+RUN npm install
+RUN npn run test
+>>>>>>> bf5b673 (Updated the Dockerfile and added the command to run the test cases)
 EXPOSE 8000
 
 # Start the app
