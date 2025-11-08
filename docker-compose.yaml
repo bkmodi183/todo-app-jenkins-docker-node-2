@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  web:
+    image: bkmodi183/node-todo-app:latest
+    container_name: todo-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/node
+    environment:
+      NODE_ENV: development
