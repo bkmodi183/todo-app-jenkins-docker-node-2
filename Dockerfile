@@ -1,27 +1,19 @@
-<<<<<<< HEAD
-# Use a modern Node LTS image
+# Use modern Node LTS
 FROM node:18-alpine
 
-# Set working directory inside the container
+# Set working directory
 WORKDIR /node
 
-# Copy package.json and package-lock.json first for caching
+# Copy dependency files first (better caching)
 COPY package*.json ./
 
-# Install dependencies
+# Install production dependencies
 RUN npm install --production
 
-# Copy the rest of the app files
+# Copy app source
 COPY . .
 
-# Expose the port your app uses
-=======
-FROM node:12.2.0-alpine
-WORKDIR node
-COPY . /node
-RUN npm install
-RUN npn run test
->>>>>>> bf5b673 (Updated the Dockerfile and added the command to run the test cases)
+# Expose app port
 EXPOSE 8000
 
 # Start the app
